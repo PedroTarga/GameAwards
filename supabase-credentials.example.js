@@ -10,5 +10,5 @@
  * A segurança dos dados vem das políticas de RLS (Row Level Security) no banco,
  * não do sigilo desta chave. Nunca coloque a service_role key no front-end.
  */
-const SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
-const SUPABASE_ANON_KEY = "SUA-ANON-KEY";
+const SUPABASE_URL = "https://vwvijrhrwbrvxpcgwiac.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_q5u80e5gri5cKnqORsEqsA_2Z0C1gs0";
