@@ -16,21 +16,16 @@
         el.content.innerHTML = `
             <article class="detail-layout" ${jogoView.accentStyle(jogo)}>
                 <header class="detail-hero" ${jogoView.coverStyle(jogo)} data-reveal="scale">
+                    <img class="detail-hero-logo" src="./assets/images/logo.webp" alt="Game Awards">
                     <div class="detail-hero-text">
                         <div class="detail-tags">${tags}${jogo.destaque ? '<span class="tag tag--highlight">Destaque</span>' : ""}</div>
                         <h1 class="detail-title">${esc(jogo.nome)}</h1>
-                        <p class="detail-subtitle">${esc([jogo.estudio, jogo.ano].filter(Boolean).join(" · "))}</p>
                     </div>
                 </header>
                 <div class="detail-columns">
                     <section class="detail-main" data-reveal>
                         <h2 class="detail-section-title">Sobre o jogo</h2>
                         <p class="detail-description">${esc(jogo.descricao ?? "Descrição em breve.")}</p>
-                        <h2 class="detail-section-title">Informações</h2>
-                        <ul class="info-list">
-                            ${info(jogoView.ICONS.user, "Estúdio", jogo.estudio)}
-                            ${info(jogoView.ICONS.calendar, "Lançamento", jogo.ano)}
-                        </ul>
                     </section>
                     <aside class="detail-aside" data-reveal>
                         <div class="ticket-card">

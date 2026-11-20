@@ -17,9 +17,10 @@
 </head>
 
 <body>
-    <nav class="header-menu">
-        <img class="logo" alt="logotipo eventos fatec" title="Logotipo eventos fatec"
-            src="../assets/images/logotipo-eventos-fatec.png" />
+    <nav class="header-menu admin-login-header">
+        <a class="brand" href="../index.html">
+            <img src="../assets/images/logo.webp" width="200" height="70" alt="Game Awards">
+        </a>
         <ul class="navigation">
             <li class="item">
                 <a class="link" href="../index.html">Voltar para o site</a>
@@ -27,17 +28,21 @@
         </ul>
     </nav>
 
-    <main class="login">
-        <h1>Entrar no painel</h1>
-        <p>Acesso restrito à equipe organizadora dos eventos.</p>
+    <main class="login admin-login">
+        <div class="admin-login-copy">
+            <p class="admin-login-label">Área administrativa</p>
+            <h1>Game Awards</h1>
+            <p>Gerencie os jogos e categorias indicadas.</p>
+        </div>
 
         <div class="admin-panel">
+            <h2>Entrar no painel</h2>
             <p class="feedback" id="login-feedback" role="alert" aria-live="assertive"></p>
 
             <form class="admin-form" id="form-login" novalidate>
                 <div class="form-field">
                     <label for="campo-email">E-mail</label>
-                    <input type="email" id="campo-email" name="email" placeholder="voce@fatec.sp.gov.br"
+                    <input type="email" id="campo-email" name="email" placeholder="admin@gameawards.com"
                         autocomplete="username" required />
                     <span class="error">Informe o e-mail.</span>
                 </div>
@@ -49,13 +54,14 @@
                     <span class="error">Informe a senha.</span>
                 </div>
 
+                <p class="field-hint">Use o e-mail e a senha cadastrados em Authentication → Users no Supabase.</p>
                 <button type="submit" class="call-to-action">Entrar</button>
             </form>
         </div>
     </main>
 
     <footer class="footer">
-        <p>© 2026 Eventos Fatec — Projeto de Desenvolvimento Web, 2º ciclo.</p>
+        <p>© 2026 Game Awards — Projeto de Desenvolvimento Web.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>

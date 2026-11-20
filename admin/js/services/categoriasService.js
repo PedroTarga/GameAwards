@@ -39,9 +39,9 @@ const categoriasService = (function () {
 
             if (error) throw error;
 
-            return (data ?? []).map(({ eventos, ...categoria }) => ({
+            return (data ?? []).map(({ jogos, ...categoria }) => ({
                 ...categoria,
-                totalEventos: eventos?.[0]?.count ?? 0
+                totalEventos: jogos?.[0]?.count ?? 0
             }));
         },
 

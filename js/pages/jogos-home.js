@@ -14,7 +14,7 @@
         const q = norm(state.q.trim());
         return state.jogos.filter((j) =>
             (!state.categoriaId || String(j.categoria_id) === state.categoriaId) &&
-            (!q || norm(j.nome + " " + (j.estudio ?? "")).includes(q)));
+            (!q || norm(j.nome).includes(q)));
     }
 
     function renderFiltros() {

@@ -5,7 +5,7 @@
 const jogosService = (function () {
     "use strict";
 
-    const COLUMNS = "id, nome, estudio, ano, descricao, imagem_url, destaque, categoria_id, categoria:categorias(id, nome, slug, cor)";
+    const COLUMNS = "id, nome, descricao, imagem_url, destaque, categoria_id, categoria:categorias(id, nome, slug, cor)";
 
     return Object.freeze({
         async listar() {

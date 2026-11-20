@@ -34,10 +34,6 @@ const jogoView = (function () {
                     </div>
                     <div class="event-body">
                         <h3 class="event-title">${esc(jogo.nome)}</h3>
-                        <ul class="event-meta">
-                            ${jogo.estudio ? `<li>${ICONS.user}<span>${esc(jogo.estudio)}</span></li>` : ""}
-                            ${jogo.ano ? `<li>${ICONS.calendar}<span>${esc(jogo.ano)}</span></li>` : ""}
-                        </ul>
                     </div>
                 </a>
                 <div class="event-actions">

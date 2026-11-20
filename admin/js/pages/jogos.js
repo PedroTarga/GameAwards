@@ -19,14 +19,17 @@
         try {
             const jogos = await jogosService.list();
             $("lista").innerHTML = jogos.map((j) => `
-                <div class="item">
-                    ${j.imagem_url ? `<img src="${dom.escapeHtml(j.imagem_url)}" alt="">` : '<div class="ph"></div>'}
-                    <div>
-                        <strong>${dom.escapeHtml(j.nome)}</strong><br>
-                        <small>${dom.escapeHtml([j.estudio, j.ano, j.categoria?.nome].filter(Boolean).join(" · "))}</small>
+                <article class="admin-game-card">
+                    ${j.imagem_url
+                        ? `<img class="admin-game-cover" src="${dom.escapeHtml(j.imagem_url)}" alt="Capa de ${dom.escapeHtml(j.nome)}">`
+                        : '<div class="admin-game-cover admin-game-cover--empty" aria-label="Sem imagem"></div>'}
+                    <div class="admin-game-info">
+                        <h3>${dom.escapeHtml(j.nome)}</h3>
+                        <p>${dom.escapeHtml(j.categoria?.nome || "Sem categoria")}</p>
+                        ${j.destaque ? '<span class="admin-game-tag">Em destaque</span>' : ""}
                     </div>
-                    <button type="button" class="danger" data-excluir="${dom.escapeHtml(j.id)}">Excluir</button>
-                </div>`).join("") || "<p>Nenhum jogo cadastrado.</p>";
+                    <button type="button" class="btn-sm btn-delete admin-game-delete" data-excluir="${dom.escapeHtml(j.id)}">Excluir</button>
+                </article>`).join("") || '<p class="admin-games-empty">Nenhum jogo cadastrado.</p>';
         } catch (erro) {
             $("lista").textContent = "Não foi possível carregar os jogos.";
         }
@@ -45,8 +48,6 @@
         try {
             await jogosService.create({
                 nome,
-                estudio: f.estudio.value.trim() || null,
-                ano: f.ano.value ? Number(f.ano.value) : null,
                 descricao: f.descricao.value.trim() || null,
                 imagem_url: imagem || null,
                 destaque: f.destaque.checked,
@@ -71,11 +72,6 @@
         } catch (erro) {
             msg("Não foi possível excluir.");
         }
-    });
-
-    $("sair").addEventListener("click", async () => {
-        await authService.signOut();
-        window.location.replace("login.html");
     });
 
     carregarCategorias();

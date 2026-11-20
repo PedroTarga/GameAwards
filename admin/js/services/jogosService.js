@@ -8,7 +8,7 @@ const jogosService = (function () {
         async list() {
             const { data, error } = await window.supabaseClient
                 .from(TABLE)
-                .select("id, nome, estudio, ano, imagem_url, destaque, categoria:categorias(nome)")
+                .select("id, nome, imagem_url, destaque, categoria:categorias(nome)")
                 .order("created_at", { ascending: false });
 
             if (error) throw error;

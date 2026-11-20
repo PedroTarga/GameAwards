@@ -3,24 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
 <title>Jogos | Painel Game Awards</title>
-<style>
-html[data-auth="required"] body{visibility:hidden}
-:root{--bg:#0b0c10;--card:#1f2833;--txt:#c5c6c7;--mut:#9da9b4;--cyan:#66fcf1;--teal:#45a29e}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-nav{display:flex;gap:16px;align-items:center;padding:14px 20px;background:var(--card)}nav a{color:var(--txt)}nav .sp{flex:1}
-main{max-width:980px;margin:0 auto;padding:24px 20px 60px}
-form{background:var(--card);border-radius:14px;padding:18px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
-.full{grid-column:1/-1}label{display:grid;gap:4px;color:var(--mut);font-size:.9rem}
-input,textarea,select{padding:10px;border-radius:8px;border:1px solid #33334d;background:#0f0f1a;color:var(--txt);font:inherit}
-.cats{display:flex;flex-wrap:wrap;gap:10px}.cats label{display:flex;gap:6px;align-items:center;color:var(--txt)}
-button{padding:11px 16px;border:0;border-radius:10px;background:linear-gradient(90deg,var(--cyan),var(--teal));color:#0b0c10;font-weight:600;cursor:pointer}
-button.danger{background:#7a1630;padding:6px 10px}button:disabled{opacity:.5}
-#msg{margin:12px 0;color:#ffd166;min-height:1.4em}
-.item{display:flex;gap:12px;align-items:center;background:var(--card);border-radius:12px;padding:10px;margin-top:10px}
-.item img,.item .ph{width:56px;height:74px;object-fit:cover;border-radius:8px;background:#22223a}.item div{flex:1}.item small{color:var(--mut)}
-@media(max-width:640px){form{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="../assets/css/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
 <script src="../supabase-credentials.js"></script>
 <script src="../assets/js/supabaseClient.js"></script>
@@ -28,23 +13,40 @@ button.danger{background:#7a1630;padding:6px 10px}button:disabled{opacity:.5}
 <script src="./js/guard.js"></script>
 </head>
 <body>
-<nav><strong>Game Awards · Painel</strong><a href="../index.html">Ver site</a><span class="sp"></span><button type="button" id="sair">Sair</button></nav>
-<main>
-  <h1>Cadastrar jogo</h1>
-  <form id="form">
-    <label>Nome do jogo *<input name="nome" required maxlength="120"></label>
-    <label>Estúdio<input name="estudio" maxlength="120"></label>
-    <label>Ano de lançamento<input name="ano" type="number" min="1970" max="2100"></label>
-    <label>Categoria<select name="categoria_id" id="categoria"></select></label>
-    <label class="full">Link da imagem (https://...)<input name="imagem_url" type="url" placeholder="https://site.com/capa.jpg"></label>
-    <label class="full">Descrição<textarea name="descricao" rows="3" maxlength="600"></textarea></label>
-    <label class="full" style="display:flex;flex-direction:row;gap:8px;align-items:center"><input name="destaque" type="checkbox" style="min-width:0"> Destacar na home</label>
-    <div class="full"><button type="submit" id="salvar">Salvar jogo</button></div>
+<nav class="header-menu">
+  <a class="brand" href="index.html"><img src="../assets/images/logo.webp" width="200" height="70" alt="Game Awards"></a>
+  <ul class="navigation">
+    <li class="item"><a class="link" href="index.html">Painel</a></li>
+    <li class="item"><a class="link active" href="jogos.html" aria-current="page">Jogos</a></li>
+    <li class="item"><a class="link" href="categorias.html">Categorias</a></li>
+    <li class="item"><a class="link" id="logout" href="login.html">Sair</a></li>
+  </ul>
+</nav>
+<main class="admin">
+  <div class="admin-header">
+    <div>
+      <h1>Jogos indicados</h1>
+      <p>Cadastre e mantenha os jogos exibidos no site.</p>
+    </div>
+  </div>
+  <section class="admin-panel">
+  <h2>Cadastrar jogo</h2>
+  <form id="form" class="admin-form">
+    <div class="form-row">
+      <div class="form-field"><label>Nome do jogo *<input name="nome" required maxlength="120"></label></div>
+      <div class="form-field"><label>Categoria<select name="categoria_id" id="categoria"></select></label></div>
+    </div>
+    <div class="form-field"><label>Link da imagem (https://...)<input name="imagem_url" type="url" placeholder="https://site.com/capa.jpg"></label></div>
+    <div class="form-field"><label>Descrição<textarea name="descricao" rows="3" maxlength="600"></textarea></label></div>
+    <label class="form-field"><input name="destaque" type="checkbox"> Destacar na home</label>
+    <button type="submit" class="call-to-action" id="salvar">Salvar jogo</button>
   </form>
   <div id="msg" role="status" aria-live="polite"></div>
   <h2>Jogos cadastrados</h2>
-  <div id="lista"></div>
+  <div class="admin-games-grid" id="lista"></div>
+  </section>
 </main>
+<footer class="footer"><p>© 2026 Game Awards — Projeto de Desenvolvimento Web.</p></footer>
 <script src="../assets/js/utils/dom.js"></script>
 <script src="./js/services/categoriasService.js"></script>
 <script src="./js/services/jogosService.js"></script>
