@@ -40,10 +40,12 @@
 
     --header-height: 76px;
 
-    /* Marca (iguais nos dois temas) */
-    --brand-pink: #e20543;
-    --brand-purple: #bf09cf;
-    --brand-teal: #14b8a6;
+    /* Paleta principal */
+    --brand-black: #0b0c10;
+    --brand-surface: #1f2833;
+    --brand-silver: #c5c6c7;
+    --brand-cyan: #66fcf1;
+    --brand-teal: #45a29e;
     --white: #ffffff;
     --black: #000000;
 
@@ -62,28 +64,28 @@
 :root[data-theme="dark"] {
     color-scheme: dark;
 
-    --color-bg: #121216;
-    --color-bg-elevated: #0b0b0e;
-    --color-surface: #1b1b21;
-    --color-surface-2: #25252d;
-    --color-input: #23232b;
+    --color-bg: var(--brand-black);
+    --color-bg-elevated: #11151b;
+    --color-surface: var(--brand-surface);
+    --color-surface-2: #293747;
+    --color-input: #252f3a;
 
-    --color-text: #f5f5f8;
-    --color-text-muted: #9aa3bd;
-    --color-border: rgba(255, 255, 255, .12);
-    --color-border-strong: rgba(255, 255, 255, .24);
+    --color-text: var(--brand-silver);
+    --color-text-muted: #9da9b4;
+    --color-border: rgba(197, 198, 199, .12);
+    --color-border-strong: rgba(102, 252, 241, .28);
 
-    --color-primary: var(--brand-pink);
-    --color-primary-hover: #ff2a63;
-    --color-secondary: var(--brand-purple);
+    --color-primary: var(--brand-cyan);
+    --color-primary-hover: #86fff6;
+    --color-secondary: var(--brand-teal);
     --color-tertiary: var(--brand-teal);
-    --color-on-primary: var(--white);
+    --color-on-primary: var(--brand-black);
 
     --color-track: rgba(255, 255, 255, .12);
     --color-row-hover: rgba(255, 255, 255, .04);
-    --color-glass: rgba(18, 18, 22, .62);
-    --color-glass-light: rgba(255, 255, 255, .16);
-    --color-glass-border: rgba(255, 255, 255, .14);
+    --color-glass: rgba(11, 12, 16, .72);
+    --color-glass-light: rgba(197, 198, 199, .12);
+    --color-glass-border: rgba(102, 252, 241, .16);
     --color-cover-text: var(--white);
 
     --color-success: #5fe0a0;
@@ -97,67 +99,15 @@
     --color-warning: #ffc864;
     --color-warning-bg: rgba(255, 184, 0, .16);
 
-    --hero-blob-1: rgba(226, 5, 67, .55);
-    --hero-blob-2: rgba(191, 9, 207, .45);
-    --hero-blob-3: rgba(20, 184, 166, .35);
-    --hero-grid-line: rgba(255, 255, 255, .05);
+    --hero-blob-1: rgba(102, 252, 241, .38);
+    --hero-blob-2: rgba(69, 162, 158, .32);
+    --hero-blob-3: rgba(31, 40, 51, .55);
+    --hero-grid-line: rgba(102, 252, 241, .06);
 
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, .3);
     --shadow-md: 0 12px 30px rgba(0, 0, 0, .35);
     --shadow-lg: 0 24px 60px rgba(0, 0, 0, .5);
-    --shadow-glow: 0 10px 30px rgba(226, 5, 67, .35);
-}
-
-/* Tema claro */
-:root[data-theme="light"] {
-    color-scheme: light;
-
-    --color-bg: #f5f6fb;
-    --color-bg-elevated: #ffffff;
-    --color-surface: #ffffff;
-    --color-surface-2: #eef0f7;
-    --color-input: #ffffff;
-
-    --color-text: #15151c;
-    --color-text-muted: #5a6175;
-    --color-border: rgba(21, 21, 28, .1);
-    --color-border-strong: rgba(21, 21, 28, .22);
-
-    --color-primary: #d4043e;
-    --color-primary-hover: #b30334;
-    --color-secondary: #a207b0;
-    --color-tertiary: #0f9488;
-    --color-on-primary: var(--white);
-
-    --color-track: rgba(21, 21, 28, .1);
-    --color-row-hover: rgba(21, 21, 28, .035);
-    --color-glass: rgba(255, 255, 255, .72);
-    --color-glass-light: rgba(255, 255, 255, .22);
-    --color-glass-border: rgba(21, 21, 28, .08);
-    --color-cover-text: var(--white);
-
-    --color-success: #13804a;
-    --color-success-bg: rgba(19, 128, 74, .1);
-    --color-success-border: rgba(19, 128, 74, .35);
-    --color-danger: #c0262d;
-    --color-danger-bg: rgba(192, 38, 45, .08);
-    --color-danger-border: rgba(192, 38, 45, .35);
-    --color-danger-solid: #d42a30;
-    --color-backdrop: rgba(21, 21, 28, .38);
-    --color-warning: #9a6200;
-    --color-warning-bg: rgba(255, 184, 0, .2);
-
-    --hero-blob-1: rgba(226, 5, 67, .28);
-    --hero-blob-2: rgba(191, 9, 207, .22);
-    --hero-blob-3: rgba(20, 184, 166, .24);
-    --hero-grid-line: rgba(21, 21, 28, .05);
-
-    --shadow-sm: 0 2px 8px rgba(21, 21, 28, .06);
-    --shadow-md: 0 12px 30px rgba(21, 21, 28, .08);
-    --shadow-lg: 0 24px 60px rgba(21, 21, 28, .12);
-    --shadow-glow: 0 10px 30px rgba(212, 4, 62, .25);
-
-    --logo-filter: invert(1) hue-rotate(180deg) saturate(1.4);
+    --shadow-glow: 0 10px 30px rgba(102, 252, 241, .22);
 }
 
 /* ---------- 2. Base / acessibilidade ---------- */
@@ -260,10 +210,16 @@ button {
     gap: 12px 24px;
     min-height: var(--header-height);
     padding: 10px clamp(16px, 4vw, 40px);
-    background-color: var(--color-glass);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 5, 8, .78) 0,
+            rgba(5, 5, 8, .38) 72%,
+            transparent 100%
+        );
     backdrop-filter: blur(16px) saturate(140%);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid transparent;
 
     .brand {
         display: inline-flex;
@@ -337,45 +293,6 @@ button {
             }
         }
     }
-}
-
-.theme-toggle {
-    position: relative;
-    display: inline-grid;
-    place-items: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-surface-2);
-    color: var(--color-text);
-    cursor: pointer;
-    overflow: hidden;
-    transition: border-color var(--duration-fast), transform var(--duration-fast) var(--ease-out);
-
-    &:hover {
-        border-color: var(--color-primary);
-        transform: rotate(12deg);
-    }
-
-    svg {
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.8;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        transition: transform .5s var(--ease-spring), opacity var(--duration);
-    }
-}
-
-/* No escuro mostra o sol (ação: ir para o claro); no claro, a lua. */
-:root[data-theme="dark"] .theme-toggle .icon-moon,
-:root[data-theme="light"] .theme-toggle .icon-sun {
-    opacity: 0;
-    transform: rotate(-90deg) scale(.4);
 }
 
 /* ---------- 4. Botões, tags e chips ---------- */
@@ -598,8 +515,35 @@ button {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    padding: clamp(80px, 12vw, 140px) 20px clamp(110px, 12vw, 150px);
+    margin-top: calc(-1 * var(--header-height));
+    min-height: clamp(420px, 48vw, 600px);
+    padding: calc(var(--header-height) + clamp(80px, 10vw, 120px)) 20px clamp(110px, 12vw, 150px);
     text-align: center;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+            180deg,
+            rgba(5, 5, 8, .18),
+            rgba(5, 5, 8, .58)
+        );
+        pointer-events: none;
+    }
+
+    .hero-video {
+        position: absolute;
+        inset: 50% auto auto 50%;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
 
     .hero-content {
         position: relative;
@@ -1506,15 +1450,6 @@ button {
     text-align: center;
 }
 
-.footer-link {
-    color: var(--color-text-muted);
-    font-size: 12px;
-    transition: color var(--duration-fast);
-
-    &:hover {
-        color: var(--color-primary);
-    }
-}
 
 /* ---------- 6. Formulários ---------- */
 
@@ -2349,13 +2284,6 @@ button:disabled {
         color: inherit;
         transform: none;
     }
-}
-
-/* Troca de tema com View Transitions (theme.js anima o círculo) */
-::view-transition-old(root),
-::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
 }
 
 /* Quem pede menos movimento não recebe animações */
